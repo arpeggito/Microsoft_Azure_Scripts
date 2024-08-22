@@ -12,7 +12,6 @@ def is_admin():
     """Check if the script is running with administrative privileges."""
     return ctypes.windll.shell32.IsUserAnAdmin()
 
-
 def elevate():
     """Rerun the script with administrative privileges."""
     ctypes.windll.shell32.ShellExecuteW(
