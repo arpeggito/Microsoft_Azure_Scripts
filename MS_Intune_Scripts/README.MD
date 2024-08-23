@@ -17,6 +17,7 @@ Before running this script, ensure that you have the following:
 ### Step 1: Clone the Repository
 
 First, clone this repository to your local machine:
+
     ```bash
     git clone https://github.com/arpeggito/Microsoft_Azure_Scripts.git
     cd Microsoft_Azure_Scripts
@@ -41,6 +42,7 @@ User.ReadWrite.All. With this permissions, the script will be able pull the Entr
 
 ### Step 3: Install the required Python Libraries
 Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip:
+
     ```bash
     pip install -r requirements.txt
     ```
@@ -48,6 +50,7 @@ Navigate to the directory where you've cloned the repository and install the nec
 ### Step 4: Running the script
 
 From the terminal window run the following command:
+
     ```bash
     python3 ms_graph_script.py
     ```
