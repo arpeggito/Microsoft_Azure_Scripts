@@ -18,8 +18,9 @@ Before running this script, ensure that you have the following:
 
 First, clone this repository to your local machine:
     ```bash
-    git clone https://github.com/your-repository/device-cleanup-script.git
-    cd device-cleanup-script
+    git clone https://github.com/arpeggito/Microsoft_Azure_Scripts.git
+    cd Microsoft_Azure_Scripts
+    ```
 
 ### Step 2: Create an Azure AD App Registration
 
@@ -42,12 +43,14 @@ User.ReadWrite.All. With this permissions, the script will be able pull the Entr
 Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip:
     ```bash
     pip install -r requirements.txt
+    ```
 
 ### Step 4: Running the script
 
 From the terminal window run the following command:
     ```bash
     python3 ms_graph_script.py
+    ```
 
 ## Explanation of the Scenario
 
