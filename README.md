@@ -15,7 +15,7 @@ This Python script checks and corrects specific registry keys within the Windows
 ## Prerequisites
 
 - **Python 3.x**: Ensure that Python 3.x is installed on your system.
-- **Administrator Privileges**: The script requires administrative privileges to modify the Windows Registry.
+- **Administrator Privileges**: Ideally the script requires administrative privileges to modify the Windows Registry.
 
 ## How It Works
 
@@ -30,8 +30,7 @@ This Python script checks and corrects specific registry keys within the Windows
 
 ### Registry Path
 
-The script targets the following registry path:
-
+The script targets the following registry path: "SOFTWARE\Fortinet\FortiClient\Sslvpn\Tunnels\contoso"
 
 ### Expected Registry Values
 
@@ -45,9 +44,9 @@ If any of these keys are missing or have incorrect values or types, the script w
 
 ## Usage
 
-1. **Run the script**: To use the script, simply run it with Python:
+1. **Run the script**: To use the script, simply run it with Python from your computer:
    ```bash
-   python correct_registry.py
+   python check_and_correct_registry.py
 
 2. **Administrator Privileges**: If the script is not run as an administrator, it will request elevation. The script will re-run with the necessary privileges and continue executing.
 

@@ -1,17 +1,15 @@
 import requests
 import msal
-import json
-import os
 from dotenv import load_dotenv
-from msgraph import GraphServiceClient
+import os
 
 load_dotenv()
 
 # Constants for authentication and API endpoints
 CLIENT_ID = os.getenv("CLIENT_ID")
 TENANT_ID = os.getenv("TENANT_ID")
-# CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-CLIENT_SECRET = "Wy28Q~c_f6_lYzGr8qvhwI8nr5kfZhLNHsESvbzQ"
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+
 AUTHORITY = f"https://login.microsoftonline.com/{TENANT_ID}"
 SCOPE = ["https://graph.microsoft.com/.default"]
 GRAPH_API_ENDPOINT = "https://graph.microsoft.com/v1.0"
@@ -27,7 +25,7 @@ def get_access_token():
     token = app.acquire_token_for_client(SCOPE)
 
     if "access_token" in token:
-        print(token["access_token"])
+        # print(token["access_token"])
         return token["access_token"]
     else:
         raise Exception("Failed to acquire access token.")
@@ -42,10 +40,10 @@ def get_devices(access_token):
     endpoint = f"{GRAPH_API_ENDPOINT}/devices"
     devices = []
     response = requests.get(endpoint, headers=headers)
-    print(response.status_code)
+    # print(response.status_code)
     if response.status_code == 200:
         devices = response.json().get("value", [])
-    print(devices)
+    # print(devices)
     return devices
 
 
@@ -58,8 +56,10 @@ def get_intune_devices(access_token):
     endpoint = f"{GRAPH_API_ENDPOINT}/deviceManagement/managedDevices"
     devices = []
     response = requests.get(endpoint, headers=headers)
+    # print(response.status_code)
     if response.status_code == 200:
         devices = response.json().get("value", [])
+    # print(devices)
     return devices
 
 
@@ -106,20 +106,23 @@ if __name__ == "__main__":
 
         # Fetch devices from Entra ID
         ad_devices = get_devices(access_token)
+        # print(ad_devices)
 
-        # # Fetch devices from Intune
-        # intune_devices = get_intune_devices(access_token)
+        # Fetch devices from Intune
+        intune_devices = get_intune_devices(access_token)
+        # print(intune_devices)
 
-        # # Combine both sets of devices
-        # all_devices = ad_devices + intune_devices
+        # Combine both sets of devices
+        all_devices = ad_devices + intune_devices
+        # print(all_devices)
 
-        # # Find duplicates
-        # duplicates = find_duplicates(all_devices)
+        # Find duplicates
+        duplicates = find_duplicates(all_devices)
 
-        # # Clean up duplicates
-        # deleted_count = cleanup_duplicates(duplicates, access_token)
+        # Clean up duplicates
+        deleted_count = cleanup_duplicates(duplicates, access_token)
 
-        # print(f"Cleanup complete. {deleted_count} duplicate devices were deleted.")
+        print(f"Cleanup complete. {deleted_count} duplicate devices were deleted.")
 
     except Exception as e:
         print(f"An error occurred: {e}")
