@@ -2,15 +2,20 @@
 
 This Python script checks and corrects specific registry keys within the Windows Registry for the Fortinet FortiClient SSL VPN settings. It ensures that the specified registry values are correctly set according to predefined expected values and types. If the values do not match, the script updates them accordingly.
 
+## Understanding the Intune Native Feature
+
+The native feature used to detect and fix issues before users notice is called Scripts and Remediations. This feature is part of the Endpoint analytics in Intune and can run scripts to detect and fix issues on a user's device. Sadly will not be part of the test since it requires a Windows License Verification.
+
+![alt text](image.png)
+
 ## Table of Contents
 
 - [Prerequisites](#prerequisites)
 - [How It Works](#how-it-works)
 - [Usage](#usage)
-- [Error Handling](#error-handling)
-- [Customizing the Script](#customizing-the-script)
-- [Known Issues](#known-issues)
-- [License](#license)
+- [Considerations](#considerations)
+- [PowerShell](#powershell) 
+
 
 ## Prerequisites
 
@@ -63,3 +68,7 @@ If any of these keys are missing or have incorrect values or types, the script w
 ### Considerations 
 
 - OS Compatibility: The script is designed to run on Windows systems. It will not function on non-Windows platforms.
+
+## PowerShell
+
+Since the idea is to run this scripts from Intune Scripts and Remediations, the script was also written in PowerShell and can be find in the repository.

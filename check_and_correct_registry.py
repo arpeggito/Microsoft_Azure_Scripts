@@ -4,9 +4,7 @@ import sys
 import traceback
 import os
 
-
 REGISTRY_PATH = r"SOFTWARE\Fortinet\FortiClient\Sslvpn\Tunnels\contoso"
-
 
 def is_admin():
     """Check if the script is running with administrative privileges."""
