@@ -59,3 +59,9 @@ From the terminal window run the following command:
 
 I've configured two computers in the azure domain with the same hostname, therefore creating a duplicate. The script will identify the duplicates and remove the old device and keep the new device.
 
+**Azure Duplicated Entries**
+![alt text](Entra_ID_Duplicated.png)
+
+**Intune Duplicated Entries**
+![alt text](Intune_duplicated_entries.png)
+

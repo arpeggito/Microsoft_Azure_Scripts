@@ -19,7 +19,6 @@ def elevate():
         None, "runas", sys.executable, " ".join(sys.argv), None, 1
     )
 
-
 def correct_registry(registry_key, key_name, value, value_type):
     try:
         # Key is a global constant
@@ -34,10 +33,6 @@ def correct_registry(registry_key, key_name, value, value_type):
         print(f"Access denied. Please run the script as an administrator.")
     except Exception as e:
         print(f"An error occurred: {e}")
-
-
-def show_message(message, title="Notification"):
-    ctypes.windll.user32.MessageBoxW(0, message, title, 1)
 
 
 def check_and_correct_registry():
