@@ -65,3 +65,8 @@ I've configured two computers in the azure domain with the same hostname, theref
 **Intune Duplicated Entries**
 ![alt text](Intune_duplicated_entries.png)
 
+Once the script has run successfully, and cleared the duplicated device you should be able to see this in the console:
+
+![alt text](<Screenshot 2024-08-23 212751.png>)
+
+In Azure and Intune, the newest added device will be the one shown in the console.
