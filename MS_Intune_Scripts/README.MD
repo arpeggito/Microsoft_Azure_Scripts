@@ -4,6 +4,12 @@
 
 This script is designed to clean up duplicate devices in Azure Entra ID (formerly Azure AD) and Microsoft Intune using the Microsoft Graph API. The script identifies devices with the same name, keeps only the most recent device (based on the last contact time), and deletes the others. This helps maintain a clean and organized device inventory in your organization.
 
+
+Understanding the Intune Native Feature
+The native feature used to detect and fix issues before users notice is called Scripts and Remediations. This feature is part of the Endpoint analytics in Intune and can run scripts to detect and fix issues on a user's device. Sadly will not be part of the test since it requires a Windows License Verification.
+
+![alt text](image.png)
+
 ## Prerequisites
 
 Before running this script, ensure that you have the following:
