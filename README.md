@@ -103,6 +103,6 @@ If the script is run and the registry contains the correct values, the script wi
 ## PowerShell
 
 Since the idea is to run this scripts from Intune Scripts and Remediations, the script was also written in PowerShell and can be find in the repository.
-If you'd like to run the PS version of the script, you can do it in your local Windows environment as follows:
+If you'd like to run the PS version of the script, you can do it in your local Windows environment as follows: 
    ```bash
-   powershell.exe -ExecutionPolicy Bypass -File .\check_correct_registry.ps1
+   powershell.exe .\check_correct_registry.ps1
