@@ -40,23 +40,14 @@ After application registration:
 ![alt text](Certificate_and_secrets.png)
 
 3. Go to API Permission
+
 ![alt text](API_permission.png)
 
 4. Grant the following permissions: Device.Read.All, Device.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All, 
 User.ReadWrite.All. With this permissions, the script will be able pull the EntraID and Intune device information. If you do not grant this permissions, the script will most likely fail with a 403 Forbidden error.
 ![alt text](Configured_permissions.png)
 
-
-3. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
-    ```bash
-    pip install -r requirements.txt
-
-4. **Running the script**: From the terminal window run the following command:
-
-    ```bash
-    python3 ms_graph_script.py
-    ```
-
+In Azure and Intune, the newest added device will be the one shown in the console.
 ## Explanation of the Scenario
 
 I've configured two computers in the azure domain with the same hostname, therefore creating a duplicate. The script will identify the duplicates and remove the old device and keep the new device.
@@ -67,8 +58,15 @@ I've configured two computers in the azure domain with the same hostname, theref
 **Intune Duplicated Entries**
 ![alt text](Intune_duplicated_entries.png)
 
+3. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
+    ```bash
+    pip install -r requirements.txt
+
+4. **Running the script**: From the terminal window run the following command:
+
+    ```bash
+    python .\ms_graph_script.py
+
 Once the script has run successfully, and cleared the duplicated device you should be able to see this in the console:
 
 ![alt text](<script_output.png>)
-
-In Azure and Intune, the newest added device will be the one shown in the console.
