@@ -13,6 +13,7 @@ Before running this script, ensure that you have the following:
 2. **Microsoft Azure and Intune Subscription**: You must have access to an Azure subscription and the necessary permissions to manage devices in Azure Entra ID and Intune.
 3. **App Registration in Azure AD**: The script uses an Azure AD app registration to authenticate and access the Microsoft Graph API.
 
+
 ## Setup
 
 1. **Create an Azure EntraID App Registration**: You need to register an application in Azure AD to obtain the necessary credentials for accessing the Microsoft Graph API.

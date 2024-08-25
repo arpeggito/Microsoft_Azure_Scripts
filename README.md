@@ -79,11 +79,13 @@ Therefore, we can see how the script works and it's output will look like.
 ![alt text](script_running.png)
 
 Then we check the registry one more time:
+
 ![alt text](corrected_registry.png)
 
 We can observe that the script successfully identifies the wrong values and successfully correct them.
 
 If the script is run and the registry contains the correct values, the script will show the following:
+
 ![alt text](right_values.png)
 
 3. **Administrator Privileges**: If the script is not run as an administrator, it will request elevation. The script will re-run with the necessary privileges and continue executing.
