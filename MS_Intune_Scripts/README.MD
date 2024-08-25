@@ -24,10 +24,10 @@ Before running this script, ensure that you have the following:
 
 1. Go to the Azure Portal and navigate to EntraID.
 2. Select App registrations and then click on New registration.
-![alt text](image-3.png)
+![alt text](App_registrations.png)
 
 3. Enter a name for the application, in my case I used "Intune AD Test".
-![alt text](image-2.png)
+![alt text](Application_name.png)
 
 4. Choose the appropriate Supported account types (Single-tenant is usually sufficient).
 5. Click Register.
@@ -37,12 +37,14 @@ After application registration:
 ![alt text](intune_info.png) 
 
 2. Go to Certificates & secrets and create a new Client secret. Note down the secret value as you'll need it later.
-![alt text](image.png)
+![alt text](Certificate_and_secrets.png)
 
-3. Go to API Permissions
+3. Go to API Permission
+![alt text](API_permission.png)
+
 4. Grant the following permissions: Device.Read.All, Device.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All, 
 User.ReadWrite.All. With this permissions, the script will be able pull the EntraID and Intune device information. If you do not grant this permissions, the script will most likely fail with a 403 Forbidden error.
-![alt text](image-1.png)
+![alt text](Configured_permissions.png)
 
 
 3. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
@@ -67,6 +69,6 @@ I've configured two computers in the azure domain with the same hostname, theref
 
 Once the script has run successfully, and cleared the duplicated device you should be able to see this in the console:
 
-![alt text](<Screenshot 2024-08-23 212751.png>)
+![alt text](<script_output.png>)
 
 In Azure and Intune, the newest added device will be the one shown in the console.
