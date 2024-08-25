@@ -60,7 +60,7 @@ If any of these keys are missing or have incorrect values or types, the script w
 
 ## Usage
 
-Before running the script, I've manually configured the registry value as follows:
+Before running the script, I've manually configured on my personal computer the registry values as follows:
 ![alt text](wrong_registry.png)
 
 Therefore, we can see how the script works and it's output will look like.
@@ -74,7 +74,7 @@ Therefore, we can see how the script works and it's output will look like.
 
 2. **Run the script**: To use the script, simply run it with Python from your computer:
    ```bash
-   python check_and_correct_registry.py
+   python .\check_and_correct_registry.py
 
 ![alt text](script_running.png)
 
