@@ -16,7 +16,7 @@ The main script for this particular case will be check_and_correct_registry.py s
 
 The native feature used to detect and fix issues before users notice is called Scripts and Remediations. This feature is part of the Endpoint analytics in Intune and can run scripts to detect and fix issues on a user's device. Sadly will not be part of the test since it requires a Windows License Verification.
 
-![alt text](image.png)
+![alt text](scripts_and_remediations.png)
 
 ## Table of Contents
 
@@ -60,6 +60,11 @@ If any of these keys are missing or have incorrect values or types, the script w
 
 ## Usage
 
+Before running the script, I've manually configured the registry value as follows:
+![alt text](wrong_registry.png)
+
+Therefore, we can see how the script works and it's output will look like.
+
 1. **Clone the Repository**: First, clone this repository to your local machine:
 
     ```bash
@@ -71,9 +76,14 @@ If any of these keys are missing or have incorrect values or types, the script w
    ```bash
    python check_and_correct_registry.py
 
-3. **Administrator Privileges**: If the script is not run as an administrator, it will request elevation. The script will re-run with the necessary privileges and continue executing.
+![alt text](script_running.png)
 
-4. **Check and Correct Registry**: The script will automatically check the specified registry keys and correct any discrepancies.
+Then we check the registry one more time:
+![alt text](corrected_registry.png)
+
+We can observe that the script successfully identifies the wrong values and successfully correct them.
+
+3. **Administrator Privileges**: If the script is not run as an administrator, it will request elevation. The script will re-run with the necessary privileges and continue executing.
 
 ### Error Handling
 
