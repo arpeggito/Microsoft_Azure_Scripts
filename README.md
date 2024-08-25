@@ -83,6 +83,9 @@ Then we check the registry one more time:
 
 We can observe that the script successfully identifies the wrong values and successfully correct them.
 
+If the script is run and the registry contains the correct values, the script will show the following:
+![alt text](right_values.png)
+
 3. **Administrator Privileges**: If the script is not run as an administrator, it will request elevation. The script will re-run with the necessary privileges and continue executing.
 
 ### Error Handling
