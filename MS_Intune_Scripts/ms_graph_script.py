@@ -32,6 +32,7 @@ def get_access_token():
 
 
 def get_devices(access_token):
+    # Endpoint documentation: https://learn.microsoft.com/en-us/graph/api/device-get?view=graph-rest-1.0&tabs=http
     """Fetch all devices from Entra ID (Azure AD)."""
     headers = {
         "Authorization": f"Bearer {access_token}",
@@ -48,6 +49,7 @@ def get_devices(access_token):
 
 
 def get_intune_devices(access_token):
+    # Endpoint documentation: https://learn.microsoft.com/en-us/graph/api/intune-devices-manageddevice-list?view=graph-rest-1.0
     """Fetch all devices from Intune."""
     headers = {
         "Authorization": f"Bearer {access_token}",
@@ -78,6 +80,7 @@ def find_duplicates(devices):
 
 
 def delete_device(device_id, access_token):
+    # Endpoint documentation: https://learn.microsoft.com/en-us/graph/api/device-delete?view=graph-rest-1.0&tabs=http
     """Delete a device by its ID."""
     headers = {"Authorization": f"Bearer {access_token}"}
     endpoint = f"{GRAPH_API_ENDPOINT}/devices/{device_id}"
