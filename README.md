@@ -31,7 +31,7 @@ The native feature used to detect and fix issues before users notice is called S
 
 - **Python 3.x**: Ensure that Python 3.x is installed on your system.
 - **Reg Library**: Understand the methods used by the Reg Library: https://docs.python.org/3/library/winreg.html
-- **Administrator Privileges**: Ideally the script requires administrative privileges to modify the Windows Registry.
+- **Administrator Privileges**: Ideally the script requires Admin privileges to modify the Windows Registry.
 
 
 ## How It Works
@@ -41,7 +41,6 @@ The native feature used to detect and fix issues before users notice is called S
 - **`is_admin()`**: Checks if the script is running with administrative privileges.
 - **`elevate()`**: Re-runs the script with administrative privileges if it is not already elevated.
 - **`correct_registry()`**: Sets a registry key to the correct value and type if it is not already set correctly.
-- **`show_message()`**: Displays a message box to the user.
 - **`check_and_correct_registry()`**: Main function that checks the specified registry keys and corrects them if necessary.
 - **`main()`**: The entry point of the script, which checks for administrative privileges and calls the necessary functions.
 
@@ -61,14 +60,12 @@ If any of these keys are missing or have incorrect values or types, the script w
 
 ## Usage
 
-1. **Clone the Repository**:
-
-First, clone this repository to your local machine:
+1. **Clone the Repository**: First, clone this repository to your local machine:
 
     ```bash
     git clone https://github.com/arpeggito/Microsoft_Azure_Scripts.git
     cd Microsoft_Azure_Scripts
-    ```
+
 
 2. **Run the script**: To use the script, simply run it with Python from your computer:
    ```bash
