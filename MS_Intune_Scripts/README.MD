@@ -10,8 +10,9 @@ This script is designed to clean up duplicate devices in Azure Entra ID (formerl
 Before running this script, ensure that you have the following:
 
 1. **Python 3.x**: The script is written in Python, so you'll need to have Python installed on your machine.
-2. **Microsoft Azure and Intune Subscription**: You must have access to an Azure subscription and the necessary permissions to manage devices in Azure Entra ID and Intune.
-3. **App Registration in Azure AD**: The script uses an Azure AD app registration to authenticate and access the Microsoft Graph API.
+2. **Microsoft Graph API Documentation**: Understand the endpoints methods from the Graph API: https://learn.microsoft.com/en-us/graph/
+3. **Microsoft Azure and Intune Subscription**: You must have access to an Azure subscription and the necessary permissions to manage devices in Azure Entra ID and Intune.
+4. **App Registration in Azure AD**: The script uses an Azure AD app registration to authenticate and access the Microsoft Graph API.
 
 
 ## Setup
