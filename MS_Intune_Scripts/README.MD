@@ -15,22 +15,17 @@ Before running this script, ensure that you have the following:
 
 ## Setup
 
-1. **Clone the Repository**: First, clone this repository to your local machine.
-    ```bash
-    git clone https://github.com/arpeggito/Microsoft_Azure_Scripts.git
-    cd Microsoft_Azure_Scripts
+1. **Create an Azure EntraID App Registration**: You need to register an application in Azure AD to obtain the necessary credentials for accessing the Microsoft Graph API.
 
-2. **Create an Azure EntraID App Registration**: You need to register an application in Azure AD to obtain the necessary credentials for accessing the Microsoft Graph API.
-
-1. Go to the Azure Portal and navigate to EntraID.
-2. Select App registrations and then click on New registration.
+2. Go to the Azure Portal and navigate to EntraID.
+3. Select App registrations and then click on New registration.
 ![alt text](App_registrations.png)
 
-3. Enter a name for the application, in my case I used "Intune AD Test".
+4. Enter a name for the application, in my case I used "Intune AD Test".
 ![alt text](Application_name.png)
 
-4. Choose the appropriate Supported account types (Single-tenant is usually sufficient).
-5. Click Register.
+5. Choose the appropriate Supported account types (Single-tenant is usually sufficient).
+6. Click Register.
 
 After application registration:
 1. Note down the Application (client) ID and Directory (tenant) ID from the Overview page since this will be part of the environment variables of the script.
@@ -48,6 +43,7 @@ User.ReadWrite.All. With this permissions, the script will be able pull the Entr
 ![alt text](Configured_permissions.png)
 
 In Azure and Intune, the newest added device will be the one shown in the console.
+
 ## Explanation of the Scenario
 
 I've configured two computers in the azure domain with the same hostname, therefore creating a duplicate. The script will identify the duplicates and remove the old device and keep the new device.
@@ -58,11 +54,19 @@ I've configured two computers in the azure domain with the same hostname, theref
 **Intune Duplicated Entries**
 ![alt text](Intune_duplicated_entries.png)
 
-3. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
+## Usage of the script
+
+1. **Clone the Repository**: First, clone this repository to your local machine.
+    ```bash
+    git clone https://github.com/arpeggito/Microsoft_Azure_Scripts.git
+    cd Microsoft_Azure_Scripts
+
+
+2. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
     ```bash
     pip install -r requirements.txt
 
-4. **Running the script**: From the terminal window run the following command:
+3. **Running the script**: From the terminal window run the following command:
 
     ```bash
     python .\ms_graph_script.py
