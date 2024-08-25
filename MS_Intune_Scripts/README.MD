@@ -15,27 +15,37 @@ Before running this script, ensure that you have the following:
 
 ## Setup
 
-1. **Clone the Repository**:First, clone this repository to your local machine:
+1. **Clone the Repository**: First, clone this repository to your local machine.
     ```bash
     git clone https://github.com/arpeggito/Microsoft_Azure_Scripts.git
     cd Microsoft_Azure_Scripts
 
-2. **Create an Azure AD App Registration**: You need to register an application in Azure AD to obtain the necessary credentials for accessing the Microsoft Graph API.
+2. **Create an Azure EntraID App Registration**: You need to register an application in Azure AD to obtain the necessary credentials for accessing the Microsoft Graph API.
 
 1. Go to the Azure Portal and navigate to EntraID.
 2. Select App registrations and then click on New registration.
-3. Enter a name for the application, e.g., "Device Cleanup Script".
+![alt text](image-3.png)
+
+3. Enter a name for the application, in my case I used "Intune AD Test".
+![alt text](image-2.png)
+
 4. Choose the appropriate Supported account types (Single-tenant is usually sufficient).
 5. Click Register.
 
 After application registration:
 1. Note down the Application (client) ID and Directory (tenant) ID from the Overview page since this will be part of the environment variables of the script.
+![alt text](intune_info.png) 
+
 2. Go to Certificates & secrets and create a new Client secret. Note down the secret value as you'll need it later.
+![alt text](image.png)
+
 3. Go to API Permissions
 4. Grant the following permissions: Device.Read.All, Device.ReadWrite.All, DeviceManagementManagedDevices.Read.All, DeviceManagementManagedDevices.ReadWrite.All, 
 User.ReadWrite.All. With this permissions, the script will be able pull the EntraID and Intune device information. If you do not grant this permissions, the script will most likely fail with a 403 Forbidden error.
+![alt text](image-1.png)
 
-3. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip:
+
+3. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
     ```bash
     pip install -r requirements.txt
 
