@@ -52,7 +52,7 @@ function Set-RegistryValue {
 }
 
 # Function to check and correct registry values
-function Check-AndCorrectRegistry {
+function Get-AndCorrectRegistry {
     # Check if the registry path exists
     if (-not (Test-Path $registryPath)) {
         Write-Host "Registry path $registryPath not found."
