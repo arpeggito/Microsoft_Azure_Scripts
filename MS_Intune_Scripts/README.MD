@@ -61,8 +61,13 @@ I've configured two computers in the azure domain with the same hostname, theref
     git clone https://github.com/arpeggito/Microsoft_Azure_Scripts.git
     cd Microsoft_Azure_Scripts
 
+2. **Setup the .env File**: For the script to run smoothly, you'll need to setup the .env file where the enviromental variables are located, this file needs to be created in the same folder where the script is located. In this file the following variables should be located: CLIENT_ID, TENANT_ID, CLIENT_SECRET and The script will call these variables with the load_dotenv library. Environmental variables are secure for scripts because they keep sensitive information like secret keys and credentials out of the codebase, reducing the risk of exposure and unauthorized access. the file should look like this:
+    ```bash
+    CLIENT_ID = "xxxxxxxxxxxxxxxx"
+    TENANT_ID = "xxxxxxxxxxxxxxxx"
+    CLIENT_SECRET = "xxxxxxxxxxxxxxxx"
 
-2. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
+3. **Install the required Python Libraries**: Navigate to the directory where you've cloned the repository and install the necessary Python packages using pip.
     ```bash
     pip install -r requirements.txt
 
